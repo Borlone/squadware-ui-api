@@ -1,6 +1,6 @@
 const path = {
     employees: {
-        GETS: '/employees/:page',
+        GETS: '/employees/page/:page',
         GET: '/employees/:id',
         POST: '/employees'
     },
