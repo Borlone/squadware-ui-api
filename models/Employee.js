@@ -8,7 +8,7 @@ const EmployeeSchema = new mongoose.Schema({
     address: {
         addressName: { type: String, required: true },
         address1: { type: String, required: true },
-        address2: String,
+        address2: { type: String, default: null },
         city: { type: String, required: true },
         state: { type: String, required: true },
         zipCode: { type: String, required: true }
@@ -26,9 +26,9 @@ const EmployeeSchema = new mongoose.Schema({
         terminationDate: String
     },
     compensation: {
-        type: {type: String, default: 'salary'},
-        rate: {type: String, required: true},
-        isCommissionSalePerson: {type: Boolean, default: false},
+        type: { type: String, default: 'salary' },
+        rate: { type: String, required: true },
+        isCommissionSalePerson: { type: Boolean, default: false },
         percentNewSale: String,
         percentRetSale: String
     }
