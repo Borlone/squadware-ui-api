@@ -3,7 +3,7 @@ const { uploadAvatar, uploadFiles } = require('../middleware/upload');
 
 const router = express.Router();
 
-const port = process.env.PORT || 5000;
+const hostname = process.env.PORT || 'localhost:5000';
 
 // upload image for avatar
 router.post('/upload/avatar', uploadAvatar.single('avatar'), (req, res) => {
@@ -11,7 +11,7 @@ router.post('/upload/avatar', uploadAvatar.single('avatar'), (req, res) => {
     if (!file) {
         return res.status(400).json('Please upload a file.')
     }
-    const avatarPath = `${req.protocol}://${req.hostname}:${port}/${file.path}`
+    const avatarPath = `${req.protocol}://${hostname}/${file.path}`
     res.json({ avatar: avatarPath })
 })
 
